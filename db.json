@@ -1,0 +1,60 @@
+{
+  "blogs": [
+    {
+      "id": "fa45",
+      "title": "Food blog updated",
+      "description": "Lorem ipsum dolor sit amet. A omnis dignissimos vel unde Quis est reiciendis fuga sit minima tempore sit assumenda aspernatur eos quia labore. Id accusamus corporis qui autem tempora est amet consectetur et voluptas vero qui sapiente aliquid. Et voluptatum sunt ut provident minus et accusamus quia eum impedit molestias ut deleniti fugit et autem dolorum. Et galisum voluptatem est nisi animi sit magnam magnam ut dolores maiores.",
+      "category": "Food",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1708856681/j9jhjdyjacbxnkgltomf.jpg",
+      "date": "2/25/2024"
+    },
+    {
+      "id": "9c35",
+      "title": "Tech",
+      "description": "Sit reprehenderit mollitia rem veniam odit sit explicabo perspiciatis ut galisum similique vel recusandae quaerat? Et sunt voluptates qui ipsa eius aut repellendus voluptatem nam similique itaque eum laborum doloribus. Et cumque rerum sed suscipit galisum eos sequi nesciunt.",
+      "category": "Tech",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1708878360/aah9kam9bra5u9auin0z.jpg",
+      "date": "2/25/2024"
+    },
+    {
+      "id": "0650",
+      "title": "Spicy Foods",
+      "description": "Lorem ipsum dolor sit amet. Hic inventore similique ut sunt consectetur aut laudantium incidunt aut harum voluptatem. Ut molestiae velit in placeat sint et magni reiciendis.  Aut reprehenderit dolor ab voluptatem rerum ad galisum distinctio quo laboriosam maiores. Sit galisum accusamus qui asperiores facilis ab autem minus aut aspernatur aperiam. Qui dolore magnam aut neque quisquam a nihil dolores et voluptatem facere aut similique aperiam non quis veniam.",
+      "category": "Food",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1708944835/mdgourcennixh9mro9o9.jpg",
+      "date": "2/26/2024"
+    },
+    {
+      "id": "4ea9",
+      "title": "Fashion",
+      "description": "Eos deserunt doloremque ut nihil necessitatibus eos modi alias qui consequatur sunt et sunt tenetur est necessitatibus consequuntur non quam aperiam. Et voluptatem voluptatibus ex maiores adipisci aut earum nulla eum laborum odio qui numquam nostrum id nesciunt labore.",
+      "category": "Fashion",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1709384870/wqom1dotqovgamtfnqh9.jpg",
+      "date": "3/2/2024"
+    },
+    {
+      "id": "bc71",
+      "title": "Sports",
+      "description": "Sit voluptas labore qui internos commodi ea nobis dicta aut reiciendis quis ut voluptatum doloremque qui commodi quasi qui voluptas ipsam. Et porro odio eum amet explicabo id eaque esse ab sint amet. Aut libero blanditiis et minima perspiciatis sed galisum nisi sed ullam ullam est voluptatem quia.",
+      "category": "Sports",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1709384924/ixuscevoxmcjh9ezy4qr.jpg",
+      "date": "3/2/2024"
+    },
+    {
+      "id": "dc15",
+      "title": "Fitness",
+      "description": "Lorem ipsum dolor sit amet. Et nulla obcaecati eum saepe ratione aut aperiam aliquid ea veritatis laboriosam. Ut sint dolores non atque fugiat eum perspiciatis officiis.",
+      "category": "Fitness",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1709384977/chorlredxsyd084ydtpp.jpg",
+      "date": "3/2/2024"
+    },
+    {
+      "id": "ebc8",
+      "title": "Travel",
+      "description": "Rem accusamus aspernatur est ratione saepe rem velit quae ut doloribus aspernatur rem consequatur fugiat eum quod adipisci! Sed officiis dolorem et obcaecati iure ut velit consequuntur. Non deleniti ipsa et molestiae quia aut dolores consequatur qui reiciendis aspernatur sed facilis voluptatem. Ut suscipit enim sed quis voluptatem et soluta sunt.",
+      "category": "Travel",
+      "imageUrl": "http://res.cloudinary.com/dtfxwziqx/image/upload/v1709385391/eyivaqz7ee0syjpz8n77.jpg",
+      "date": "3/2/2024"
+    }
+  ]
+}
