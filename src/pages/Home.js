@@ -23,8 +23,6 @@ const Home = () => {
   }, []);
 
   const loadBlogsData = async (start, end, increase, operation) => {
-    const totalBlog = await axios.get("http://localhost:5000/blogs");
-    settotalBlog(totalBlog.data.length);
     const response = await axios.get(
       `http://localhost:5000/blogs?_start=${start}&_end=${end}`
     );
@@ -32,9 +30,8 @@ const Home = () => {
       setData(response.data);
       if (operation) {
         setcurrentPage(0);
-      } else {
-        setcurrentPage(currentPage + increase);
       }
+      setcurrentPage(currentPage + increase);
     } else {
       toast.error("something went wrong");
     }
@@ -42,6 +39,7 @@ const Home = () => {
 
   const fetchlatestBlog = async () => {
     const totalBlog = await axios.get("http://localhost:5000/blogs");
+    settotalBlog(totalBlog.data.length);
     const start = totalBlog.data.length - 4;
     const end = totalBlog.data.length;
     const response = await axios.get(
@@ -76,7 +74,7 @@ const Home = () => {
   const onInputChange = (e) => {
     console.log("value", e.target.value);
     if (!e.target.value) {
-      loadBlogsData(0, 5, 0);
+      loadBlogsData();
     }
     setsearchValue(e.target.value);
   };
@@ -84,7 +82,7 @@ const Home = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     const response = await axios.get(
-      `http://localhost:5000/blogs?q=${searchValue}`
+      `http://localhost:5000/blogs?title=${searchValue}`
     );
     if (response.status === 200) {
       setData(response.data);

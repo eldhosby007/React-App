@@ -21,7 +21,7 @@ const Pagination = ({
       return null;
     if (currentPage === 0) {
       return (
-        <MDBPagination center className="md-0">
+        <MDBPagination center className="md-0" style={{marginBottom:"50px"}}>
           <MDBPaginationItem>
             <MDBPaginationLink>1</MDBPaginationLink>
           </MDBPaginationItem>
@@ -38,7 +38,7 @@ const Pagination = ({
       totalblog - data.length !== pageLimit
     ) {
       return (
-        <MDBPagination center className="md-0">
+        <MDBPagination center className="md-0" style={{marginBottom:"50px"}}>
           <MDBPaginationItem>
             <MDBBtn
               rounded
@@ -66,7 +66,7 @@ const Pagination = ({
       );
     } else {
       return (
-        <MDBPagination center className="md-0">
+        <MDBPagination center className="md-0" style={{marginBottom:"50px"}}>
           <MDBPaginationItem>
             <MDBBtn
               rounded
