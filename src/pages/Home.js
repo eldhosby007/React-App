@@ -6,22 +6,35 @@ import Blogs from "../components/Blogs";
 import Search from "../components/Search";
 import Category from "../components/Category";
 import LatestBlog from "../components/LatestBlog";
+import Pagination from "../components/Pagination";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [latestBlog, setlatestBlog] = useState([]);
   const [searchValue, setsearchValue] = useState("");
+  const [currentPage, setcurrentPage] = useState(0);
+  const [totalBlog, settotalBlog] = useState(null);
+  const [pageLimit] = useState(5);
   const options = ["Travel", "Food", "Fashion", "Sports", "Tech", "Fitness"];
 
   useEffect(() => {
-    loadBlogsData();
+    loadBlogsData(0, 5, 0);
     fetchlatestBlog();
   }, []);
 
-  const loadBlogsData = async () => {
-    const response = await axios.get("http://localhost:5000/blogs");
+  const loadBlogsData = async (start, end, increase, operation) => {
+    const totalBlog = await axios.get("http://localhost:5000/blogs");
+    settotalBlog(totalBlog.data.length);
+    const response = await axios.get(
+      `http://localhost:5000/blogs?_start=${start}&_end=${end}`
+    );
     if (response.status === 200) {
       setData(response.data);
+      if (operation) {
+        setcurrentPage(0);
+      } else {
+        setcurrentPage(currentPage + increase);
+      }
     } else {
       toast.error("something went wrong");
     }
@@ -31,7 +44,9 @@ const Home = () => {
     const totalBlog = await axios.get("http://localhost:5000/blogs");
     const start = totalBlog.data.length - 4;
     const end = totalBlog.data.length;
-    const response = await axios.get(`http://localhost:5000/blogs?_start=${start}&_end=${end}`);
+    const response = await axios.get(
+      `http://localhost:5000/blogs?_start=${start}&_end=${end}`
+    );
     if (response.status === 200) {
       setlatestBlog(response.data);
     } else {
@@ -51,7 +66,7 @@ const Home = () => {
       const response = await axios.delete(`http://localhost:5000/blogs/${id}`);
       if (response.status === 200) {
         toast.success("Blog deleted successfully");
-        loadBlogsData();
+        loadBlogsData(0, 5, 0, "delete");
       } else {
         toast.error("something went wrong");
       }
@@ -61,7 +76,7 @@ const Home = () => {
   const onInputChange = (e) => {
     console.log("value", e.target.value);
     if (!e.target.value) {
-      loadBlogsData();
+      loadBlogsData(0, 5, 0);
     }
     setsearchValue(e.target.value);
   };
@@ -120,12 +135,22 @@ const Home = () => {
         </MDBCol>
         <MDBCol size="3">
           <h4 className="text-start">Latest Post</h4>
-          {latestBlog && (latestBlog.map((item,index)=>(
-            <LatestBlog key={index} {...item} />
-          )))}
+          {latestBlog &&
+            latestBlog.map((item, index) => (
+              <LatestBlog key={index} {...item} />
+            ))}
           <Category options={options} handleCategory={handleCategory} />
         </MDBCol>
       </MDBRow>
+      <div className="mt-3">
+        <Pagination
+          currentPage={currentPage}
+          loadBlogsData={loadBlogsData}
+          pageLimit={pageLimit}
+          data={data}
+          totalblog={totalBlog}
+        />
+      </div>
     </>
   );
 };

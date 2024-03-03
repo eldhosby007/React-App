@@ -12,7 +12,7 @@ const Search = ({handleSearch, searchValue, onInputChange}) => {
           value={searchValue}
           onChange={onInputChange}
         ></input>
-        <MDBBtn type="submit">search</MDBBtn>
+        <MDBBtn type="submit" style={{left:"5px"}}>search</MDBBtn>
       </form>
     </div>
   );
