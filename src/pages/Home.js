@@ -37,6 +37,7 @@ const Home = () => {
     }
   };
 
+  //Latest blog data fetching
   const fetchlatestBlog = async () => {
     const totalBlog = await axios.get("http://localhost:5000/blogs");
     settotalBlog(totalBlog.data.length);
